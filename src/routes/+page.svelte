@@ -1,17 +1,20 @@
 
-<body><div class="start-menu">
+<body>
+    
+<div class="start-menu">
 
-<h1>IN THE</h1>
-<h2>STARS</h2>
+    <h1>IN THE</h1>
+    <h2>STARS</h2>
 
-<div class="start-button-container">
-    <button class="start-button"><a href="/homepage">START</a></button>
+    <div class="start-button-container">
+        <button class="start-button"><a href="/homepage">START</a></button>
+    </div>
 </div>
-</div></body>
+
+</body>
 <style>
     :global(body) {
-        /* background-image: url('../assets/spacey.jpg'); */
-        background-color: #120826;
+        background-image: url('../assets/spacey.jpg');
     }
 
     h1 {
