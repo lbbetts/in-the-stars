@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Cards {
+  card_id        Int  @id @default(autoincrement())
+  card_name       String
+  reversed       Boolean
+  image_url       String
+  keywords_upright       String
+  keywords_reversed       String
+  description_upright       String
+  description_reversed       String
+}
+
+model Fates {
+  fate_id        Int  @id @default(autoincrement())
+  question       String 
+  picked_cards      String
+  reflection       String
+}

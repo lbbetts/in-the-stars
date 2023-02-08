@@ -1,5 +1,5 @@
 <script>
-	import PulledCards from '$lib/PulledCards.svelte'
+	import CardField from './CardField.svelte'
 	import { fade } from 'svelte/transition';
 
 	let path = ""
@@ -17,7 +17,7 @@
 </h2>
 
 <div class="pulled-cards-container">
-	<PulledCards bind:cardCount={awaitCards}/>
+	<CardField bind:cardCount={awaitCards}/>
 </div>
 {/if}
 {#if awaitCards ===3}

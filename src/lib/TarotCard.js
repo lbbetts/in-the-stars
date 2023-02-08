@@ -3,7 +3,7 @@ let MAJOR_ARCANA = [
 		Card_id: 1,
 		Card_name: 'THE FOOL',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'FOOL.png',
 		Keywords_upright: 'NEW BEGINNING, FEARLESSNESS, NAIVETY',
 		Keywords_reversed: 'CARELESSNESS, IRRATIONALITY, DISTRACTION',
 		Description_upright:
@@ -16,7 +16,7 @@ let MAJOR_ARCANA = [
 		Card_id: 2,
 		Card_name: 'THE MAGICIAN',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'MAGIC.png',
 		Keywords_upright: 'MASTERY, FOCUS, POWER',
 		Keywords_reversed: 'INACTION, SELFISHNESS, UNDERUTILIZATION',
 		Description_upright:
@@ -29,7 +29,7 @@ let MAJOR_ARCANA = [
 		Card_id: 3,
 		Card_name: 'THE HIGH PRIESTESS',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'HIGH.png',
 		Keywords_upright: 'INTUITION, ONENESS, EMPATHY',
 		Keywords_reversed: 'RESISTANCE, INFLUENCE, DENIAL',
 		Description_upright:
@@ -42,7 +42,7 @@ let MAJOR_ARCANA = [
 		Card_id: 4,
 		Card_name: 'THE EMPRESS',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'EMPRESS.png',
 		Keywords_upright: 'ABUNDANCE, FERTILITY, NURTURING',
 		Keywords_reversed: 'DEPENDENCE, FUTILITY, CONTROL',
 		Description_upright:
@@ -55,7 +55,7 @@ let MAJOR_ARCANA = [
 		Card_id: 5,
 		Card_name: 'THE EMPEROR',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'EMPEROR.png',
 		Keywords_upright: 'STRUCTURE, AUTONOMY, AUTHORITY',
 		Keywords_reversed: 'DOMINATION, INFLEXIBILITY, ABSENCE',
 		Description_upright:
@@ -68,7 +68,7 @@ let MAJOR_ARCANA = [
 		Card_id: 6,
 		Card_name: 'THE HIEROPHANT',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'HIERO.png',
 		Keywords_upright: 'TRADITION, MENTORSHIP, EDUCATION',
 		Keywords_reversed: 'INDIVIDUALITY, CONFIDENCE, EVOLUTION',
 		Description_upright:
@@ -81,7 +81,7 @@ let MAJOR_ARCANA = [
 		Card_id: 7,
 		Card_name: 'THE LOVERS',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'LOVERS.png',
 		Keywords_upright: 'PARTNERSHIP, DUALITY, CHOICE',
 		Keywords_reversed: 'CONFLICT, ASYMMETRY, SELF-DOUBT',
 		Description_upright:
@@ -94,7 +94,7 @@ let MAJOR_ARCANA = [
 		Card_id: 8,
 		Card_name: 'THE CHARIOT',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'CHARIOT.png',
 		Keywords_upright: 'TRIUMPH, WILLPOWER, FOCUS',
 		Keywords_reversed: 'SUBMISSION, REDIRECTION, COMMITMENT',
 		Description_upright:
@@ -107,7 +107,7 @@ let MAJOR_ARCANA = [
 		Card_id: 9,
 		Card_name: 'STRENGTH',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'STRENGTH.png',
 		Keywords_upright: 'CALM, DISCIPLINE, INFLUENCE',
 		Keywords_reversed: 'VULNERABILITY, REST, AGGRESSION,',
 		Description_upright:
@@ -120,7 +120,7 @@ let MAJOR_ARCANA = [
 		Card_id: 10,
 		Card_name: 'THE HERMIT',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'HERMIT.png',
 		Keywords_upright: 'SELF-DISCOVERY, INTROSPECTION, SECLUSION',
 		Keywords_reversed: 'ISOLATION, PERSUASION, NAVEL-GAZING',
 		Description_upright:
@@ -133,7 +133,7 @@ let MAJOR_ARCANA = [
 		Card_id: 11,
 		Card_name: 'WHEEL OF FORTUNE',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'WHEEL.png',
 		Keywords_upright: 'LUCK, DESTINY, MOVEMENT',
 		Keywords_reversed: 'DIFFICULTY, RESPONSIBILITY, STAGNATION',
 		Description_upright:
@@ -146,7 +146,7 @@ let MAJOR_ARCANA = [
 		Card_id: 12,
 		Card_name: 'JUSTICE',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'JUSTICE.png',
 		Keywords_upright: 'FAIRNESS, TRUTH, BALANCE',
 		Keywords_reversed: 'BLAME, DECEIT, ONE-SIDEDNESS',
 		Description_upright:
@@ -159,7 +159,7 @@ let MAJOR_ARCANA = [
 		Card_id: 13,
 		Card_name: 'THE HANGED MAN',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'HANGED.png',
 		Keywords_upright: 'PATIENCE, SURRENDER, PERSPECTIVE',
 		Keywords_reversed: 'BURN OUT, FRUSTRATION, ACTIVATION',
 		Description_upright:
@@ -172,7 +172,7 @@ let MAJOR_ARCANA = [
 		Card_id: 14,
 		Card_name: 'DEATH',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'DEATH.png',
 		Keywords_upright: 'TRANSFORMATION, CLOSURE, ENDINGS',
 		Keywords_reversed: 'LIMBO, GROWTH, PRIVACY',
 		Description_upright:
@@ -185,7 +185,7 @@ let MAJOR_ARCANA = [
 		Card_id: 15,
 		Card_name: 'TEMPERANCE',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'TEMP.png',
 		Keywords_upright: 'MODERATION, PURPOSE, BALANCE',
 		Keywords_reversed: 'EXCESS, BLOCKING, ADJUSTMENT',
 		Description_upright:
@@ -198,7 +198,7 @@ let MAJOR_ARCANA = [
 		Card_id: 16,
 		Card_name: 'THE DEVIL',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'DEVIL.png',
 		Keywords_upright: 'ENTRAPMENT, NEGATIVITY, INDULGENCE',
 		Keywords_reversed: 'ENLIGHTENMENT, AWARENESS, RELEASE',
 		Description_upright:
@@ -211,7 +211,7 @@ let MAJOR_ARCANA = [
 		Card_id: 17,
 		Card_name: 'THE TOWER',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'TOWER.png',
 		Keywords_upright: 'UPHEAVAL, CHAOS, DISSOLUTION',
 		Keywords_reversed: 'RENEWAL, PREPARATION, FREE WILL',
 		Description_upright:
@@ -224,7 +224,7 @@ let MAJOR_ARCANA = [
 		Card_id: 18,
 		Card_name: 'THE STAR',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'STAR.png',
 		Keywords_upright: 'HEALING, OPTIMISM, RENEWAL',
 		Keywords_reversed: 'HOPELESSNESS, TRIAL, DISENGAGED',
 		Description_upright:
@@ -237,7 +237,7 @@ let MAJOR_ARCANA = [
 		Card_id: 19,
 		Card_name: 'THE MOON',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'MOON.png',
 		Keywords_upright: 'UNCERTAINTY, FEAR, DREAMS',
 		Keywords_reversed: 'CLARITY, CONFRONTATION, ATTENTION',
 		Description_upright:
@@ -250,7 +250,7 @@ let MAJOR_ARCANA = [
 		Card_id: 20,
 		Card_name: 'THE SUN',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'SUN.png',
 		Keywords_upright: 'JOY, ENERGY, SUCCESS',
 		Keywords_reversed: 'RELEASE, SETBACKS, EGO',
 		Description_upright:
@@ -263,7 +263,7 @@ let MAJOR_ARCANA = [
 		Card_id: 21,
 		Card_name: 'JUDGMENT',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'JUDGMENT.png',
 		Keywords_upright: 'EVALUATION, ABSOLUTION, AWAKENING',
 		Keywords_reversed: 'HESITANCY, CRITICISM, INACTION',
 		Description_upright:
@@ -276,7 +276,7 @@ let MAJOR_ARCANA = [
 		Card_id: 22,
 		Card_name: 'THE WORLD',
 		Reversed: false,
-		Image: BLOB,
+		Image: 'WORLD.png',
 		Keywords_upright: 'WHOLENESS, UNITY, FULFILLMENT',
 		Keywords_reversed: 'COMPLETION, SHORT-CUTS, MOTIVATION',
 		Description_upright:
@@ -285,3 +285,5 @@ let MAJOR_ARCANA = [
 			'The last mile may be the hardest, but THE WORLD calls for care at all points. Tie up all loose ends for the best result.'
 	}
 ];
+
+export default MAJOR_ARCANA;

@@ -3,6 +3,7 @@
 
     export let cardCount = 0
 
+    // @ts-ignore
     let handleSelection = (event) => {
         cardCount += event.detail.amount
         console.log(cardCount)
