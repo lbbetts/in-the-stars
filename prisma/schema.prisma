@@ -10,20 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Cards {
-  card_id        Int  @id @default(autoincrement())
-  card_name       String
-  reversed       Boolean
-  image_url       String
-  keywords_upright       String
-  keywords_reversed       String
-  description_upright       String
-  description_reversed       String
-}
-
 model Fates {
   fate_id        Int  @id @default(autoincrement())
   question       String 
-  picked_cards      String
-  reflection       String
+  picked_cards   String
+  reflection     String
+  position       Star?
 }
+
+model Star {
+  star_id        Int  @id @default(autoincrement())
+  position_id    Int
+  fate           Fates @relation(fields: [fateId], references: [fate_id])
+  fateId         Int @unique
+}
+

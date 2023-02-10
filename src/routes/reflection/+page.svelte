@@ -1,24 +1,38 @@
 <script>
+// @ts-nocheck
+
     import MAJOR_ARCANA from '$lib/TarotCard.js'
     import Hand from './Hand.svelte'
+    import Insight from './Insight.svelte'
+    import Reflect from './Reflect.svelte'
 
     console.log("hi")
 
     export let pickedCards = [];
 
     function pullCard() {
-        const randomIndex = Math.floor(Math.random() * 22);
-        const card = MAJOR_ARCANA[randomIndex];
+        let randomIndex = Math.floor(Math.random() * 22);
+        let card = MAJOR_ARCANA[randomIndex];
 
         return card;
     }
 
+    function isReversed() {
+        let randomPotential = Math.floor(Math.random() * 10);
+        if (randomPotential === 1) {
+            return true
+        }
+        return false
+    }
+
     function pickCard() {
-        console.log("An attempt was made")
         while (pickedCards.length < 3){
             let newCard = pullCard();
             while (pickedCards.includes(newCard)) {
                 newCard = pullCard()
+            }
+            if (isReversed() === true) {
+                newCard["Reversed"] = true
             }
             pickedCards.push(newCard)
             console.log(pickedCards)
@@ -29,10 +43,17 @@
 
 </script>
 
-<h1>HI I'M STILL UNDER CONSTRUCTION !</h1>
+<h1>TRUST YOUR INTUITION</h1>
 
 {#if pickedCards.length === 3}
-<Hand hand={pickedCards}/>
+<div class="hand-container-container">
+    <Hand bind:hand={pickedCards}/>
+</div>
+
+<div class="insight-and-reflect">
+    <Insight bind:hand={pickedCards}/>
+    <Reflect bind:hand={pickedCards}/>
+</div>
 {/if}
 <p><a href="/homepage">BACK TO HOMEPAGE</a></p>
 
@@ -41,7 +62,27 @@
         background-color: rgb(73, 231, 236)
     }
 
-    h1 {
-        text-align: center
+    .hand-container-container {
+		margin: auto;
+		justify-content: space-evenly;
+
+        width: 575px;
+        padding: 15px;
     }
+
+    .insight-and-reflect {
+        margin: auto;
+        justify-content: center;
+        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        padding: 15px
+    }
+
+	h1 {
+		text-align: center;
+		color: black;
+		text-shadow: 3px 3px #FF4F69;
+	}
 </style>

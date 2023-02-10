@@ -1,9 +1,22 @@
 <script>
+// @ts-nocheck
+
 	import CardField from './CardField.svelte'
 	import { fade } from 'svelte/transition';
+	import { currentQuestion } from '../stores.js';
+	import { goto } from '$app/navigation'
 
-	let path = ""
+	$: path = ""
 	let awaitCards;
+
+	let updateQuestion = () => {
+		currentQuestion.set(path)
+		console.log($currentQuestion)
+	}
+
+	function nextPage(route) {
+		goto(route) 
+	}
 	
 </script>
 
@@ -21,8 +34,10 @@
 </div>
 {/if}
 {#if awaitCards ===3}
+{updateQuestion()}
 <div class="transition-screen" transition:fade="{{delay: 750, duration: 2000 }}"></div>
-<meta http-equiv='refresh' content="3;./reflection">
+<!-- <meta http-equiv='refresh' content="3;./reflection"> -->
+{nextPage("./reflection")}
 {/if}
 
 <style>

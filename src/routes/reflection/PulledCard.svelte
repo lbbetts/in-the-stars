@@ -1,30 +1,33 @@
 <script>
-    import MAJOR_ARCANA from '$lib/TarotCard.js'
+// @ts-nocheck
 
-    export let usedCards
+    export let givenCard = [];
+    export let phase = "";
 
     let trail = "./src/assets/cards/"
-    let pulledCard = [];
 
-    function validateUnique() {
-        let randomIndex = Math.floor(Math.random() * 22);
-        pulledCard = MAJOR_ARCANA[randomIndex];
-
-        if (usedCards.includes(pulledCard)) {
-            console.log("hi", pulledCard)
-            validateUnique()
-        } else {
-            console.log("hola", pulledCard)
-            usedCards.push(pulledCard)
-        }
-    }
-
-    let src = trail += pulledCard["Image"]
-
-    console.log(pulledCard)
-    console.log(src)
+    let src = trail += givenCard["Image"]
 </script>
 
-{#if pulledCard.length !== 0}
-<img {src} alt="Currently unavailable ... wait ...">
-{/if}
+<div class="phase-container">
+    <h2>{phase}</h2>
+    <h3>{givenCard["Card_name"]}</h3>
+    {#if givenCard["Reversed"] === true}
+    <img {src} class="reversed" alt="Currently unavailable">
+    {:else}
+    <img {src} alt="Currently unavailable">
+    {/if}
+</div>
+
+<style>
+    h2 {
+        color: #ffda45
+    }
+    h3 {
+        color: #ff8142;
+    }
+
+    .reversed {
+        transform: rotate(180deg);
+    }
+</style>

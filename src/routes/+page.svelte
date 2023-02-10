@@ -1,5 +1,5 @@
 
-<body>
+<div class="fake-body">
     
 <div class="start-menu">
 
@@ -11,9 +11,19 @@
     </div>
 </div>
 
-</body>
+</div>
+
 <style>
-    :global(body) {
+    .fake-body {
+        position:fixed;
+        padding:0;
+        margin:0;
+
+        top:0;
+        left:0;
+
+        width: 100%;
+        height: 100%;
         background-image: url('../assets/spacey.jpg');
     }
 
