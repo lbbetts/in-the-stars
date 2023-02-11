@@ -5,7 +5,7 @@
     import Hand from './Hand.svelte'
     import Insight from './Insight.svelte'
     import Reflect from './Reflect.svelte'
-
+    export const prerender = false
     console.log("hi")
 
     export let pickedCards = [];

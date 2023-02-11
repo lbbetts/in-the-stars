@@ -1,6 +1,7 @@
 <script>
 
     // import numReflections from "../pickcards/+page.svelte"
+    import Stars from "./Stars.svelte"
 
     // function quitProgram() {
     //     console.log("hi")
@@ -11,6 +12,14 @@
     function randomSquare() {
         randomSquare 
     }
+
+    let loading = true;
+    let stars = []; 
+    
+    setTimeout(() => {
+        stars = [{x: 25.6, y: 46.5}];
+        loading = false;
+    }, 5000);
 
     let currentStars = 0
 
@@ -23,11 +32,17 @@
     <h1>YOUR GALAXY</h1>
 </div>
 
+{#if loading}
+    <div> loading </div>
+{:else}
+<Stars stars={stars}/>
+{/if}
+
 <!-- {#if currentStars !== numReflections}
 <h2>NEW STAR AVAILABLE</h2>
 {/if} -->
 
-<div class="grid">
+<!-- <div class="grid">
     <div class="square" id="1">
         <p id="field-1"></p>
     </div>
@@ -60,14 +75,22 @@
 <div>
     <div class="button-containers">
         <button class="pick-button"><a href="/pickcards">YOUR FATE</a></button>
-        <!-- <button class="pick-button" on:click={quitProgram} >QUIT</button> -->
-    </div>
-</div>
+        <button class="pick-button" on:click={quitProgram} >QUIT</button> -->
+    <!-- </div> -->
+<!-- </div> -->
 </body>
 
 <style>
+    html {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
     body {
         background-color: #120826;
+        width: 100%;
+        height: 100%;
+        position: relative;
     }
 
     .homepage-title {
