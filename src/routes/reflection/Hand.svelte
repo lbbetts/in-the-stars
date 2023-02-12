@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import PulledCard from './PulledCard.svelte'
 
     export let hand = []

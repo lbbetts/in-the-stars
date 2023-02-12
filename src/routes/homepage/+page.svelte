@@ -1,19 +1,9 @@
-<script>
+<script lang="ts">
+    import type { PageData } from './$types'
+    
+    export let data: PageData 
 
-    // import numReflections from "../pickcards/+page.svelte"
-
-    // function quitProgram() {
-    //     console.log("hi")
-    //     window.close()
-    // }
-
-    const randomPosition = () => Math.floor(Math.random() * 10);
-    function randomSquare() {
-        randomSquare 
-    }
-
-    let currentStars = 0
-
+    $: ({ fates } = data)
 </script>
 
 
@@ -26,6 +16,13 @@
 <!-- {#if currentStars !== numReflections}
 <h2>NEW STAR AVAILABLE</h2>
 {/if} -->
+
+<h2>CURRENT FATES</h2>
+{#each fates as fate}
+    <h2>{fate.question}</h2>
+    <h2>{fate.picked_cards}</h2>
+    <h2>{fate.reflection}</h2>
+{/each}
 
 <div class="grid">
     <div class="square" id="1">
