@@ -6,6 +6,7 @@
     console.log(data)
 
     $: ({ fates } = data)
+    $: ({ stars } = data)
 
     let numStars = 0
 
@@ -13,6 +14,7 @@
     import PastCard from './PastCard.svelte'
     import HelpWindow from './HelpWindow.svelte'
     import Help from './Help.svelte'
+    import StarSpace from './StarSpace.svelte'
 
     let showPast = false;
     let showPresent = false;
@@ -32,33 +34,9 @@
 {/if}
 
 <div class="space-container">
-    <div class="square" id="1">
-        <p id="field-1"></p>
-    </div>
-    <div class="square" id="2">
-        <p id="field-2"></p>
-    </div>
-    <div class="square" id="3">
-        <p id="field-3"></p>
-    </div>
-    <div class="square" id="4">
-        <p id="field-4"></p>
-    </div>
-    <div class="square" id="5">
-        <p id="field-5"></p>
-    </div>
-    <div class="square" id="6">
-        <p id="field-6"></p>
-    </div>
-    <div class="square" id="7">
-        <p id="field-7"></p>
-    </div>
-    <div class="square" id="8">
-        <p id="field-8"></p>
-    </div>
-    <div class="square" id="9">
-        <p id="field-9"></p>
-    </div>
+    {#each stars as hotGas}
+        <StarSpace hotGas={hotGas} />
+    {/each}
 </div>
 
 <div>
@@ -124,12 +102,6 @@
 
         justify-content: center;
         margin: auto
-    }
-
-    .square {
-        width: 65px;
-        height: 65px;
-        border: solid #FF4F69 1px;
     }
 
     .button-container {

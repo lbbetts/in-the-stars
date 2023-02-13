@@ -12,25 +12,48 @@ export const load: PageServerLoad = async () => {
     }
 }
 
+// export const load: PageServerLoad = async ({ params }) => {
+//     const getStar = async () => {
+//         const star = await prisma.star.findUnique({
+//             where: {
+//                 id: Number(params.star_id)
+//             }
+//         })
+//         if (!star) {
+//             throw error(404, "Star not found")
+//         }
+//         return star
+//     }
+
+//     return {
+//         star: getStar
+//     }
+// }
+
 export const actions: Actions = {
-    createStar: async ({ request }) => {
-        console.log("I'm in createStar!!!")
-        const { star_image } = Object.fromEntries(await request.formData()) as {
-            star_image: string;
-        }
+    updateStar: async ({ request }) => {
+        console.log("im inside updateStar!")
+        const { star_id, star_image } = Object.fromEntries(await request.formData()) as { 
+            star_id: string
+            star_image: string}
         try {
-            await prisma.star.create({
+            console.log("i'm trying!")
+            await prisma.star.update({
+                where: {
+                    star_id: Number(star_id),
+                },
                 data: {
                     star_image
-                }
+                },
             })
         } catch (err) {
-            console.error(err)
-            return fail(500, {message: 'Could not save star.'})
+            console.log(err)
+            return fail(500, {message: "could not update star"})
         }
 
         return {
-            status: 201
+            status: 200
         }
     }
 }
+
