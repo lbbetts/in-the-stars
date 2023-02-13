@@ -1,9 +1,21 @@
 <script lang="ts">
     import type { PageData } from './$types'
+    import { Svroller } from 'svrollbar'
     
     export let data: PageData 
+    console.log(data)
 
     $: ({ fates } = data)
+
+    let numStars = 0
+
+    import PastWindow from './PastWindow.svelte';
+    import PastCard from './PastCard.svelte'
+    import HelpWindow from './HelpWindow.svelte'
+    import Help from './Help.svelte'
+
+    let showPast = false;
+    let showPresent = false;
 </script>
 
 
@@ -13,18 +25,13 @@
     <h1>YOUR GALAXY</h1>
 </div>
 
-<!-- {#if currentStars !== numReflections}
+{#if numStars !== fates.length}
 <h2>NEW STAR AVAILABLE</h2>
-{/if} -->
+{:else}
+<h2 style="visibility:hidden">no stars available</h2>
+{/if}
 
-<h2>CURRENT FATES</h2>
-{#each fates as fate}
-    <h2>{fate.question}</h2>
-    <h2>{fate.picked_cards}</h2>
-    <h2>{fate.reflection}</h2>
-{/each}
-
-<div class="grid">
+<div class="space-container">
     <div class="square" id="1">
         <p id="field-1"></p>
     </div>
@@ -55,9 +62,34 @@
 </div>
 
 <div>
-    <div class="button-containers">
-        <button class="pick-button"><a href="/pickcards">YOUR FATE</a></button>
-        <!-- <button class="pick-button" on:click={quitProgram} >QUIT</button> -->
+    <div class="button-container">
+        <button class="homepage-button" on:click="{() => showPast = true}">
+            PAST
+        </button>
+        
+        {#if showPast}
+            <PastWindow on:close="{() => showPast = false}">
+                <h2 class="past">PAST FATES</h2>
+                {#if fates.length === 0}
+                    <p>No fates have been logged.</p>
+                {:else}
+                    <Svroller width="500px" height="500px">
+                        {#each fates as fate}
+                            <div class="past-card"><PastCard fate={fate} /></div>
+                        {/each}
+                    </Svroller>
+                {/if}
+            </PastWindow>
+        {/if}
+        <button class="homepage-button" on:click="{() => showPresent = true}">PRESENT</button>
+
+        {#if showPresent}
+            <HelpWindow on:close="{() => showPresent = false}">
+                <Help />
+            </HelpWindow>
+        {/if}
+
+        <button class="homepage-button"><a href="/pickcards">FUTURE</a></button>
     </div>
 </div>
 </body>
@@ -67,6 +99,14 @@
         background-color: #120826;
     }
 
+    h2 {
+        color:aliceblue;
+        text-align: center;
+    }
+    .past {
+        color:#120826
+    }
+
     .homepage-title {
         color: #ffda45;
         font-size: 25px;
@@ -74,7 +114,7 @@
         padding: 10px
     }
 
-    .grid {
+    .space-container {
         width: 606px;
         height: 606px;
         padding: 25px;
@@ -87,22 +127,32 @@
     }
 
     .square {
-        width: 200px;
-        height: 200px;
+        width: 65px;
+        height: 65px;
         border: solid #FF4F69 1px;
     }
 
-    .button-containers {
-        width: 100px;
+    .button-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        width: 700px;
+        height: 50px;
 
         background: transparent;
         bottom: 25px;
-        left: 700px;
 
-        margin: auto
+        margin: auto;
+        justify-content: space-evenly;
+
+        border: solid yellow 1px;
+
+        --svrollbar-thumb-radius: 0rem;
+        --svrollbar-thumb-background: #120826;
+        --svrollbar-thumb-opacity: 1;
     }
 
-    .pick-button {
+    .homepage-button {
         font-family: sans-serif;
         text-align: center;
         font-size: 24px;
@@ -113,7 +163,14 @@
         border: none;
         border-radius: 4px;
 
-        width: 200%;
-        padding: 10px
+        width: 75%;
+        padding: 10px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .past-card {
+        width: 100%;
+        border: sold greenyellow 1px;
     }
 </style>

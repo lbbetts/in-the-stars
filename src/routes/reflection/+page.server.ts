@@ -2,9 +2,9 @@ import type { Actions } from '@sveltejs/kit';
 import { prisma } from '$lib/server/prisma';
 import { fail } from '@sveltejs/kit';
 
-export const prerender = false;
+// export const prerender = false;
 
-console.log("i'm in the page.server!")
+console.log("i'm in the reflection page.server!")
 export const actions: Actions = {
     createFate: async ({ request }) => {
         console.log("I'm in createFate!!!")

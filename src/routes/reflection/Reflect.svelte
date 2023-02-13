@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { currentQuestion } from '../stores.js'
 
     export let hand = [];
@@ -9,7 +11,7 @@
     }
 
     for (let card in hand) {
-        relevantData += (hand[card]["Card_name"]) + " " + (hand[card]["Reversed"]) + ", "
+        relevantData += (hand[card]["Card_name"]) + " "
     }
 
     console.log(relevantData)

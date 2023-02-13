@@ -14,6 +14,10 @@
 </div>
 
 <style>
+    :global(.main){
+        scrollbar-color: #93CAED #1e1e24;
+        scrollbar-width: 0.25rem;
+    }
     .fake-body {
         position:fixed;
         padding:0;
