@@ -66,10 +66,9 @@
 	.modal {
 		position: absolute;
 		left: 50%;
-		top: 75%;
-		width: calc(100vw - 4em);
-		max-width: 32em;
-		max-height: calc(100vh - 4em);
+		top: 50%;
+		width: 500px;
+		height: 300px;
 		overflow: auto;
 		transform: translate(-50%,-50%);
 		padding: 1em;
@@ -78,7 +77,7 @@
 	}
 
 	button {
-		display: block;
+		display: center;
 	}
 
 	.close-button {
@@ -88,7 +87,7 @@
 		left: 50%;
 
 		color: #FF4F69;
-		font-family: serif;
+		font-family: 'Press Start 2P', sans-serif;
 		text-align: center;
 	}
 </style>

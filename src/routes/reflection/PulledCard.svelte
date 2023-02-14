@@ -4,10 +4,12 @@
     export let givenCard = [];
     export let phase = "";
 
-    let trail = "./src/assets/cards/"
+    let trail = "src/lib/assets/cards/"
 
     let src = trail += givenCard["Image"]
+    console.log(src)
 </script>
+
 
 <div class="phase-container">
     <h2>{phase}</h2>

@@ -6,8 +6,6 @@
     import Insight from './Insight.svelte'
     import Reflect from './Reflect.svelte'
 
-    console.log("hi")
-
     export let pickedCards = [];
 
     function pullCard() {
@@ -43,23 +41,34 @@
 
 </script>
 
-<h1>TRUST YOUR INTUITION</h1>
+<body>
+    <h1>TRUST YOUR INTUITION</h1>
 
-{#if pickedCards.length === 3}
-<div class="hand-container-container">
-    <Hand bind:hand={pickedCards}/>
-</div>
+    {#if pickedCards.length === 3}
+    <div class="hand-container-container">
+        <!-- <Hand bind:hand={pickedCards}/> -->
+        <Insight bind:hand={pickedCards}/>
+    </div>
 
-<div class="insight-and-reflect">
-    <Insight bind:hand={pickedCards}/>
-    <Reflect bind:hand={pickedCards}/>
-</div>
-{/if}
-<p><a href="/homepage">BACK TO HOMEPAGE</a></p>
+    <div class="insight-and-reflect">
+        <Reflect bind:hand={pickedCards}/>
+    </div>
+    {/if}
+</body>
 
 <style>
-	:global(body) {
-        background-color: rgb(73, 231, 236)
+	body {
+        font-family: 'Press Start 2P', sans-serif;
+		position:fixed;
+        padding:0;
+        margin:0;
+
+        top:0;
+        left:0;
+
+        width: 100%;
+        height: 100%;
+        background-image: url('$lib/assets/reflection_bg.png');
     }
 
     .hand-container-container {
@@ -72,17 +81,17 @@
 
     .insight-and-reflect {
         margin: auto;
-        justify-content: center;
-        justify-content: space-evenly;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+		justify-content: space-evenly;
 
-        padding: 15px
+        width: 575px;
+        padding: 15px;
     }
 
 	h1 {
 		text-align: center;
 		color: black;
 		text-shadow: 3px 3px #FF4F69;
+        font-family: "Press Start 2P";
+        font-weight: bold;
 	}
 </style>

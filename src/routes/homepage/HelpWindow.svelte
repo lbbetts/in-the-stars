@@ -66,15 +66,16 @@
 	.modal {
 		position: absolute;
 		left: 50%;
-		top: 75%;
-		width: calc(100vw - 4em);
-		max-width: 32em;
-		max-height: calc(100vh - 4em);
+		top: 40%;
+		width: 400px;
+		height: 370px;
 		overflow: auto;
 		transform: translate(-50%,-50%);
 		padding: 1em;
 		border-radius: 0.2em;
 		background: rgb(73, 231, 236);
+
+		font-size: 12px;
 	}
 
 	button {
@@ -88,7 +89,7 @@
 		left: 50%;
 
 		color: #FF4F69;
-		font-family: serif;
+		font-family: 'Press Start 2P', sans-serif;
 		text-align: center;
 	}
 </style>

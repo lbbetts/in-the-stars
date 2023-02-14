@@ -20,29 +20,39 @@
 	
 </script>
 
+<body>
+	<h1>CHOOSE YOUR DESTINY</h1>
+	<h2>SET YOUR PATH</h2>
+	<input bind:value={path}>
+	{#if path.includes("?")}
+	<h2>
+		PICK 3 CARDS
+	</h2>
 
-<h1>CHOOSE YOUR DESTINY</h1>
-<h2>SET YOUR PATH</h2>
-<input bind:value={path}>
-{#if path.includes("?")}
-<h2>
-	PICK 3 CARDS
-</h2>
-
-<div class="pulled-cards-container">
-	<CardField bind:cardCount={awaitCards}/>
-</div>
-{/if}
-{#if awaitCards ===3}
-{updateQuestion()}
-<div class="transition-screen" transition:fade="{{delay: 750, duration: 2000 }}"></div>
-<!-- <meta http-equiv='refresh' content="3;./reflection"> -->
-{nextPage("./reflection")}
-{/if}
+	<div class="pulled-cards-container">
+		<CardField bind:cardCount={awaitCards}/>
+	</div>
+	{/if}
+	{#if awaitCards ===3}
+	{updateQuestion()}
+	<div class="transition-screen" transition:fade="{{delay: 750, duration: 2000 }}"></div>
+	{nextPage("./reflection")}
+	{/if}
+</body>
 
 <style>
-	:global(body) {
-        background-color: #120826;
+	body {
+		font-family: 'Press Start 2P', sans-serif;
+		position:fixed;
+        padding:0;
+        margin:0;
+
+        top:0;
+        left:0;
+
+        width: 100%;
+        height: 100%;
+        background-image: url('$lib/assets/default_background.png');
     }
 	h1 {
 		text-align: center;
@@ -59,26 +69,18 @@
 	input{
 		margin: auto;
 		display: block;
+		outline: none;
+
+		border: solid #49e7ec 3px;
+		background-color: #3368DC;
+
+		font-family: "Press Start 2P", sans-serif;
 	}
 
 	.pulled-cards-container {
 		margin: auto;
 		justify-content: space-evenly;
-		border: solid blue 1px;
 
 		width:575px;
-	}
-
-	.transition-screen {
-    position:fixed;
-    padding:0;
-    margin:0;
-
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 100%;
-    background:rgb(73, 231, 236, 1);
 	}
 </style>

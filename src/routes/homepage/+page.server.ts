@@ -12,24 +12,6 @@ export const load: PageServerLoad = async () => {
     }
 }
 
-// export const load: PageServerLoad = async ({ params }) => {
-//     const getStar = async () => {
-//         const star = await prisma.star.findUnique({
-//             where: {
-//                 id: Number(params.star_id)
-//             }
-//         })
-//         if (!star) {
-//             throw error(404, "Star not found")
-//         }
-//         return star
-//     }
-
-//     return {
-//         star: getStar
-//     }
-// }
-
 export const actions: Actions = {
     updateStar: async ({ request }) => {
         console.log("im inside updateStar!")

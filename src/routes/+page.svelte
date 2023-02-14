@@ -1,3 +1,6 @@
+<script>
+    import "@fontsource/press-start-2p"
+</script>
 
 <div class="fake-body">
     
@@ -14,10 +17,10 @@
 </div>
 
 <style>
-    :global(.main){
-        scrollbar-color: #93CAED #1e1e24;
-        scrollbar-width: 0.25rem;
+    :global(body) {
+        font-family: "Press Start 2P", sans-serif;
     }
+
     .fake-body {
         position:fixed;
         padding:0;
@@ -28,40 +31,49 @@
 
         width: 100%;
         height: 100%;
-        background-image: url('../assets/spacey.jpg');
+        background-image: url('$lib/assets/default_background.png');
+
+        font-family: "Press Start 2P", sans-serif;
     }
 
     h1 {
-        font-family: sans-serif;
         font-size: 50px;
         text-align: center;
-        color: #ff8142
+        color: #ff8142;
+        text-shadow: 3px 3px white
     }
     h2 {
-        font-family: cursive;
         font-size: 100px;
         text-align: center;
-        color: #ffda45
+        color: #ffd21d;
+        text-shadow: 5px 5px white
     }
 
     .start-button-container {
         background: transparent;
         position: absolute;
-        bottom: 150px;
-        left: 700px
+        left: 40%;
     }
 
-    .start-button {
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 24px;
-
-        justify-content: center;
+    .start-button {justify-content: center;
         background: #FF4F69;
 
-        border: none;
-        border-radius: 4px;
+        border: solid #120826 1px;
+        padding: 15px;
+    }
 
-        width: 200%;
+    .start-button:active {justify-content: center;
+        background: #49e7ec;
+
+        border: solid #120826 1px;
+        padding: 15px;
+    }
+
+    a {
+        font-family: "Press Start 2P", sans-serif;
+        text-align: center;
+        font-size: 24px;
+        color: #120826;
+        text-decoration: none;
     }
 </style>

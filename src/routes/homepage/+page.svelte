@@ -9,6 +9,10 @@
     $: ({ stars } = data)
 
     let numStars = 0
+    let increaseStars = () => {
+        console.log("stars increased")
+        numStars += 1
+    }
 
     import PastWindow from './PastWindow.svelte';
     import PastCard from './PastCard.svelte'
@@ -25,16 +29,20 @@
     
 <div class="homepage-title">
     <h1>YOUR GALAXY</h1>
+    {#if numStars !== fates.length}
+        <h2>NEW STAR AVAILABLE</h2>
+    {:else}
+        <h2 style="visibility:hidden">no stars available</h2>
+    {/if}
 </div>
-
-{#if numStars !== fates.length}
-<h2>NEW STAR AVAILABLE</h2>
-{:else}
-<h2 style="visibility:hidden">no stars available</h2>
-{/if}
 
 <div class="space-container">
     {#each stars as hotGas}
+        {#if hotGas.star_image != "empty_space.png"}
+        <div class='hide-star-counter'>
+            {increaseStars()}
+        </div>
+        {/if}
         <StarSpace hotGas={hotGas} />
     {/each}
 </div>
@@ -46,18 +54,19 @@
         </button>
         
         {#if showPast}
-            <PastWindow on:close="{() => showPast = false}">
-                <h2 class="past">PAST FATES</h2>
-                {#if fates.length === 0}
-                    <p>No fates have been logged.</p>
-                {:else}
-                    <Svroller width="500px" height="500px">
-                        {#each fates as fate}
-                            <div class="past-card"><PastCard fate={fate} /></div>
-                        {/each}
-                    </Svroller>
-                {/if}
-            </PastWindow>
+                <PastWindow on:close="{() => showPast = false}">
+                    <h2 class="past">PAST FATES</h2>
+                    {#if fates.length === 0}
+                        <p>No fates have been logged.</p>
+                    {:else}
+                        <Svroller width="500px" height="200px">
+                            {#each fates as fate}
+                                <PastCard fate={fate} />
+                            {/each}
+                        </Svroller>
+                    {/if}
+                </PastWindow>
+                
         {/if}
         <button class="homepage-button" on:click="{() => showPresent = true}">PRESENT</button>
 
@@ -74,12 +83,23 @@
 
 <style>
     body {
-        background-color: #120826;
+        position:fixed;
+        padding:0;
+        margin:0;
+
+        top:0;
+        left:0;
+
+        width: 100%;
+        height: 100%;
+        background-image: url('$lib/assets/default_background.png');
     }
 
     h2 {
-        color:aliceblue;
+        color: #FFF7F8;
         text-align: center;
+        font-size: 14px;
+        padding: 2px;
     }
     .past {
         color:#120826
@@ -87,28 +107,31 @@
 
     .homepage-title {
         color: #ffda45;
-        font-size: 25px;
+        font-size: 16px;
         text-align: center;
-        padding: 10px
+        padding: 25px
     }
 
     .space-container {
-        width: 606px;
-        height: 606px;
-        padding: 25px;
+        width: 580px;
+        height: 350px;
+
+        border: solid #49e7ec 2px;
+        background-color: rgb(18, 8, 38, .90);
 
         display: flex;
         flex-wrap: wrap;
 
         justify-content: center;
-        margin: auto
+        margin: auto;
+
     }
 
     .button-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
 
-        width: 700px;
+        width: 400px;
         height: 50px;
 
         background: transparent;
@@ -116,8 +139,7 @@
 
         margin: auto;
         justify-content: space-evenly;
-
-        border: solid yellow 1px;
+        padding: 10px;
 
         --svrollbar-thumb-radius: 0rem;
         --svrollbar-thumb-background: #120826;
@@ -125,24 +147,38 @@
     }
 
     .homepage-button {
-        font-family: sans-serif;
+        font-family: "Press Start 2P", sans-serif;
         text-align: center;
-        font-size: 24px;
+        font-size: 14px;
 
         justify-content: center;
-        background: #49e7ec;
+        background: #FF4F69;
 
         border: none;
-        border-radius: 4px;
 
-        width: 75%;
-        padding: 10px;
-        margin-left: 25px;
-        margin-right: 25px;
+        width: 120px;
+        height: 30px;
+        padding: 1px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .past-card {
-        width: 100%;
-        border: sold greenyellow 1px;
+        width: 50%;
+    }
+
+    .hide-star-counter {
+        display: none;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+
+    a {
+        font-family: "Press Start 2P", sans-serif;
+        text-align: center;
+        font-size: 14px;
+        color: #120826;
+        text-decoration: none;
     }
 </style>

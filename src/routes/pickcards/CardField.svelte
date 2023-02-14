@@ -20,19 +20,20 @@
     <Card on:increment={handleSelection} currentCount = {cardCount}/>
     <Card on:increment={handleSelection} currentCount = {cardCount}/>
     <Card on:increment={handleSelection} currentCount = {cardCount}/>
+    <Card on:increment={handleSelection} currentCount = {cardCount}/>
+    <Card on:increment={handleSelection} currentCount = {cardCount}/>
+    <Card on:increment={handleSelection} currentCount = {cardCount}/>
 </div>
 
 <style>
     .card-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         row-gap: 30px;
 
         justify-content: space-evenly;
         text-align: center;
 
         width:575px;
-
-        border: solid red 1px
     }
 </style>

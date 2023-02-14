@@ -25,9 +25,9 @@
     display: inline-block;
     margin: auto;
 
-    width: 150px;
-    height: 210px;
-    border-radius: 10px;
+    width: 75px;
+    height: 105px;
+    border-radius: 4px;
     border: none;
 
     background: #FF4F69;
@@ -40,9 +40,9 @@
     display: inline-block;
     margin: auto;
 
-    width: 150px;
-    height: 210px;
-    border-radius: 10px;
+    width: 75px;
+    height: 105px;
+    border-radius: 4px;
     border: none;
     
     background: #49e7ec;

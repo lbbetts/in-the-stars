@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tauri.in-the-stars-ada-capstone",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -57,8 +57,8 @@
       {
         "fullscreen": false,
         "height": 600,
-        "resizable": true,
-        "title": "RD IN THE STARS",
+        "resizable": false,
+        "title": "IN THE STARS",
         "width": 800
       }
     ]

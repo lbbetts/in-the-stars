@@ -25,6 +25,7 @@
 
         justify-content: space-evenly;
         text-align: center;
+        font-family: "Press Start 2P", sans-serif;
 
         width:575px;
         padding: 20px
